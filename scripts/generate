@@ -29,8 +29,7 @@ try { fs.mkdirSync(day_path); } catch (e) { }
 
 function generate_method(method) {
     return `${method.name}(${method.args || ""}): ${method.return || "void"} {
-
-}`;
+    }`;
 }
 
 function generate_property(prop) {
@@ -39,20 +38,18 @@ function generate_property(prop) {
 
 function generate_getter(getter) {
     return `get ${getter.name}(): ${getter.return} {
-    return this.${getter.prop_name};
-}`
+        return this.${getter.prop_name};
+    }`
 }
 
 function create_class(name, item) {
     fs.writeFileSync(path.join(day_path, `${name}.ts`), `export default class ${name}${item.generic || ""} {
-    ${(item.properties || []).map(generate_property).join("\n    ")}
-
-    ${(item.getters || []).map(generate_getter).join("\n    ")}
-
+    ${(item.properties || []).map(generate_property).join("\n\n    ")}
+    ${(item.getters || []).map(generate_getter).join("\n\n    ")}
     constructor() {
     }
 
-    ${(item.methods || []).map(generate_method).join("\n    ")}
+    ${(item.methods || []).map(generate_method).join("\n\n    ")}
 }`);
 }
 
