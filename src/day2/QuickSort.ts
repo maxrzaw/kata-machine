@@ -29,6 +29,7 @@ function partition(arr: number[], lo: number, hi: number): number {
 
     return idx;
 }
+
 export default function quick_sort(arr: number[]): void {
     qs(arr, 0, arr.length - 1);
 }
