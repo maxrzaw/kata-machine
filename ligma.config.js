@@ -1,5 +1,5 @@
-module.exports = {
-    used: [
+module.expo = {
+    completed: [
         "LinearSearchList",
         "BinarySearchList",
         "TwoCrystalBalls",
@@ -10,8 +10,6 @@ module.exports = {
         "ArrayList",
         "MazeSolver",
         "QuickSort",
-    ],
-    dsa: [
         "BTPreOrder",
         "BTInOrder",
         "BTPostOrder",
@@ -19,13 +17,53 @@ module.exports = {
         "CompareBinaryTrees",
         "DFSOnBST",
     ],
-    planned: [
+    dsa: [
+        "MinHeap",
+        "Trie",
+        "BFSGraphMatrix",
+        "DFSGraphList",
+        "DijkstraList",
+    ],
+    new: [
+        "LRU",
+        "Map",
+        "BFSGraphList",
+        "InsertionSort",
+        "MergeSort",
+        "PrimsList",
+        "RingBuffer",
+        "SinglyLinkedList",
+    ],
+    all: [
+        "LinearSearchList",
+        "BinarySearchList",
+        "TwoCrystalBalls",
+        "BubbleSort",
+        "DoublyLinkedList",
+        "Queue",
+        "Stack",
+        "ArrayList",
+        "MazeSolver",
+        "QuickSort",
+        "BTPreOrder",
+        "BTInOrder",
+        "BTPostOrder",
+        "BTBFS",
+        "CompareBinaryTrees",
+        "DFSOnBST",
         "LRU",
         "DFSGraphList",
         "Trie",
         "BFSGraphMatrix",
         "Map",
         "MinHeap",
+        "BFSGraphList",
+        "DijkstraList",
+        "InsertionSort",
+        "MergeSort",
+        "PrimsList",
+        "RingBuffer",
+        "SinglyLinkedList",
     ],
 }
 
