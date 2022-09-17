@@ -1,4 +1,4 @@
-module.expo = {
+module.exports = {
     completed: [
         "LinearSearchList",
         "BinarySearchList",
