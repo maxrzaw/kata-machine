@@ -15,6 +15,12 @@ try {
         throw new Error("backwards compatability mode");
     }
 
+    if (process.argv[2] === "--help" || process.argv[2] === "-h") {
+        console.log(`usage: yarn generate [INT] [categories...]`)
+        console.log(`possible categories are: ${Object.getOwnPropertyNames(config).join(' ')}\n`);
+        return;
+    }
+
     // combine all the lists requested
     for (let i = 3; i < process.argv.length; ++i) {
         const arg_array = config[process.argv[i]];
