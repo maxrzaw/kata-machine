@@ -4,8 +4,58 @@ const path = require("path");
 const config = require("../ligma.config");
 const dsa = require("./dsa");
 
+
 const src_path = path.join(__dirname, "..", "src");
 let day = 1;
+let dsa_group = [];
+
+// Process the args
+try {
+    if (process.argv.length === 2) { // "yarn generate"
+        throw new Error("backwards compatability mode");
+    }
+
+    // combine all the lists requested
+    for (let i = 3; i < process.argv.length; ++i) {
+        const arg_array = config[process.argv[i]];
+        if (arg_array !== undefined) {
+            dsa_group = [].concat(dsa_group, arg_array);
+        }
+    }
+
+    // If there are no algorithms, use the default.
+    if (dsa_group.length === 0) {
+        dsa_group = config.dsa;
+    }
+
+    // Shuffle the lists and select N katas for the day
+    const count = process.argv[2];
+    const n = Math.min(count, dsa_group.length);
+    const random_dsa = shuffle(dsa_group);
+    dsa_group = random_dsa.slice(0, n);
+} catch (e) {
+    console.log(e.message);
+    dsa_group = config.dsa;
+}
+
+// sorting algorithm from stack overflow
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
 
 try {
     day = +fs.readdirSync(src_path).
@@ -60,7 +110,7 @@ function create_function(name, item) {
 }`);
 }
 
-config.dsa.forEach(ds => {
+dsa_group.forEach(ds => {
     const item = dsa[ds];
     if (!item) {
         throw new Error(`algorithm ${ds} could not be found`);
