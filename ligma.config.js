@@ -16,23 +16,23 @@ module.exports = {
         "BTBFS",
         "CompareBinaryTrees",
         "DFSOnBST",
-    ],
-    dsa: [
         "MinHeap",
         "Trie",
         "BFSGraphMatrix",
         "DFSGraphList",
         "DijkstraList",
     ],
-    new: [
-        "LRU",
+    dsa: [
+        "SinglyLinkedList",
         "Map",
+        "LRU",
+    ],
+    new: [
         "BFSGraphList",
         "InsertionSort",
         "MergeSort",
         "PrimsList",
         "RingBuffer",
-        "SinglyLinkedList",
     ],
     all: [
         "LinearSearchList",
