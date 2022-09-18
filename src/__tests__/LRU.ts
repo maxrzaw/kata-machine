@@ -13,10 +13,13 @@ test("LRU", function () {
     lru.update("baz", 1337);
     expect(lru.get("baz")).toEqual(1337);
 
+    // evict foo
     lru.update("ball", 69420);
     expect(lru.get("ball")).toEqual(69420);
+    // foo was evicted
     expect(lru.get("foo")).toEqual(undefined);
     expect(lru.get("bar")).toEqual(420);
+    // evict baz
     lru.update("foo", 69);
     expect(lru.get("bar")).toEqual(420);
     expect(lru.get("foo")).toEqual(69);
@@ -24,5 +27,7 @@ test("LRU", function () {
     // shouldn't of been deleted, but since bar was get'd, bar was added to the
     // front of the list, so baz became the end
     expect(lru.get("baz")).toEqual(undefined);
+    // ball should still be there
+    expect(lru.get("ball")).toEqual(69420);
 });
 
