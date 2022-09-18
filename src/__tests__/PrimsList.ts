@@ -1,7 +1,7 @@
-import prims from "@code/PrimsAlgorithm";
+import prims from "@code/PrimsList";
 import { list1 } from "./graph";
 
-test("PrimsAlgorithm", function () {
+test("PrimsList", function () {
     // there is only one right answer for this graph
     expect(prims(list1)).toEqual([
         [
