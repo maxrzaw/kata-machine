@@ -1,9 +1,5 @@
 module.exports = {
     dsa: [
-        "RingBuffer",
-        "MergeSort",
-        "BFSGraphList",
-        "InsertionSort",
         "PrimsList",
     ],
     completed: [
@@ -31,6 +27,10 @@ module.exports = {
         "DijkstraList",
         "Map",
         "LRU",
+        "RingBuffer",
+        "MergeSort",
+        "BFSGraphList",
+        "InsertionSort",
     ],
     todo: [
     ],
