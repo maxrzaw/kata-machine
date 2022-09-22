@@ -14,10 +14,10 @@
         "typescript": "^4.7.4"
     },
     "scripts": {
-        "test": "jest RingBuffer MergeSort BFSGraphList InsertionSort PrimsList",
+        "test": "jest PrimsList",
         "clear": "./scripts/clear",
         "prettier": "prettier --write ./src",
         "generate": "./scripts/generate",
-        "day": "echo /Users/max/dev/kata-machine/src/day6"
+        "day": "echo src/day7"
     }
 }
