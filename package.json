@@ -18,6 +18,6 @@
         "clear": "./scripts/clear",
         "prettier": "prettier --write ./src",
         "generate": "./scripts/generate",
-        "day": "echo src/day7"
+        "day": "echo src/day8"
     }
 }
