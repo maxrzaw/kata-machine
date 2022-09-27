@@ -1,4 +1,4 @@
-import Queue from "../day1/Queue";
+import Queue from "../ds/Queue";
 
 export default function bfs(head: BinaryNode<number>, needle: number): boolean {
     const queue: Queue<BinaryNode<number>> = new Queue<BinaryNode<number>>();

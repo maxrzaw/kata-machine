@@ -1,4 +1,4 @@
-import Queue from "../day1/Queue";
+import Queue from "../ds/Queue";
 
 function hasUnvisited(seen: boolean[], dists: number[]): boolean {
     return  seen.some((s, i) => !s && dists[i] < Infinity);

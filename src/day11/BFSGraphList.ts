@@ -1,4 +1,4 @@
-import Queue from "../day1/Queue";
+import Queue from "../ds/Queue";
 
 export default function bfs(graph: WeightedAdjacencyList, source: number, needle: number): number[] | null {
     const seen: boolean[] = Array(graph.length).fill(false);

@@ -1,4 +1,4 @@
-import MyHeap from "../day13/MyHeap";
+import MyHeap from "../ds/MyHeap";
 type EdgeWrapper = {
     edge: GraphEdge,
     from: number,

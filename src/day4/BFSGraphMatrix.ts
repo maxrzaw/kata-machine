@@ -1,4 +1,4 @@
-import Queue from "../day1/Queue";
+import Queue from "../ds/Queue";
 
 export default function bfs(graph: WeightedAdjacencyMatrix, source: number, needle: number): number[] | null {
     let queue: Queue<number> = new Queue<number>();
