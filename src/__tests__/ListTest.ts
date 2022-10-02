@@ -10,6 +10,8 @@ export function test_list(list: List<number>): void {
     list.append(11);
     expect(list.removeAt(1)).toEqual(9);
     expect(list.remove(9)).toEqual(undefined);
+    expect(list.length).toEqual(2);
+    expect(list.get(0)).toEqual(5);
     expect(list.removeAt(0)).toEqual(5);
     expect(list.removeAt(0)).toEqual(11);
     expect(list.length).toEqual(0);
@@ -23,4 +25,12 @@ export function test_list(list: List<number>): void {
     expect(list.remove(9)).toEqual(9);
     expect(list.length).toEqual(2);
     expect(list.get(0)).toEqual(7);
+}
+function printList(list: List<number>, expected: string = "") {
+    let out: string = "expected: " + expected + "\n";
+    for (let i = 0; i < list.length; ++i) {
+        out += list.get(i);
+        out += " ";
+    }
+    console.log(out);
 }
