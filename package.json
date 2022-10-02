@@ -14,10 +14,10 @@
         "typescript": "^4.7.4"
     },
     "scripts": {
-        "test": "jest LinearSearchList BinarySearchList BubbleSort QuickSort InsertionSort MergeSort TwoCrystalBalls SinglyLinkedList DoublyLinkedList Queue Stack ArrayList Map LRU MinHeap BTPreOrder BTInOrder BTPostOrder BTBFS CompareBinaryTrees DFSOnBST Trie DFSGraphList BFSGraphMatrix BFSGraphList MazeSolver DijkstraList PrimsList RingBuffer",
+        "test": "jest BubbleSort SinglyLinkedList LinearSearchList BFSGraphMatrix BTPreOrder CompareBinaryTrees MergeSort PrimsList DFSGraphList Stack DFSOnBST BTInOrder RingBuffer DijkstraList DoublyLinkedList Map InsertionSort TwoCrystalBalls LRU BFSGraphList QuickSort Queue BinarySearchList MazeSolver Trie MinHeap BTBFS BTPostOrder ArrayList",
         "clear": "./scripts/clear",
         "prettier": "prettier --write ./src",
         "generate": "./scripts/generate",
-        "day": "echo src/day14"
+        "day": "echo src/day15"
     }
 }
