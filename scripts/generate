@@ -132,6 +132,6 @@ dsa_group.forEach(ds => {
 const align = require("./align-configs");
 align.jest(day_name);
 align.ts_config(day_name);
-align.package_json(config, relative_day_path);
-align.stats(config, day_path);
+align.package_json(dsa_group, relative_day_path);
+align.stats(dsa_group, day_path);
 
