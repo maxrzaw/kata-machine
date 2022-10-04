@@ -9,7 +9,7 @@ module.exports.stats = function(config, day_path) {
         stats = undefined;
     }
 
-    stats = config.dsa.reduce((acc, ds) => {
+    stats = config.reduce((acc, ds) => {
         if (!acc[ds]) {
             acc[ds] = 0;
         }
@@ -24,7 +24,7 @@ module.exports.stats = function(config, day_path) {
 
 module.exports.package_json = function(config, day_path) {
     const package_json = require("../package.json");
-    package_json.scripts.test = `jest ${config.dsa.join(" ")}`;
+    package_json.scripts.test = `jest ${config.join(" ")}`;
     package_json.scripts.day = `echo ${day_path}`;
 
     fs.writeFileSync(
