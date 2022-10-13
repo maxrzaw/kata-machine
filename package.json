@@ -14,10 +14,10 @@
         "typescript": "^4.7.4"
     },
     "scripts": {
-        "test": "jest RingBuffer BTInOrder",
+        "test": "jest MergeSort InsertionSort",
         "clear": "./scripts/clear",
         "prettier": "prettier --write ./src",
         "generate": "./scripts/generate",
-        "day": "echo src/day19"
+        "day": "echo src/day20"
     }
 }
