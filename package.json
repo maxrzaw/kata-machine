@@ -14,10 +14,10 @@
         "typescript": "^4.7.4"
     },
     "scripts": {
-        "test": "jest BTPostOrder Queue",
+        "test": "jest BTInOrder Map",
         "clear": "./scripts/clear",
         "prettier": "prettier --write ./src",
         "generate": "./scripts/generate",
-        "day": "echo src/day25"
+        "day": "echo src/day26"
     }
 }
