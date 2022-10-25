@@ -14,10 +14,10 @@
         "typescript": "^4.7.4"
     },
     "scripts": {
-        "test": "jest BTInOrder Map",
+        "test": "jest BinarySearchList",
         "clear": "./scripts/clear",
         "prettier": "prettier --write ./src",
         "generate": "./scripts/generate",
-        "day": "echo src/day26"
+        "day": "echo src/day27"
     }
 }
