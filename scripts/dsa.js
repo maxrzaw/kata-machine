@@ -1,36 +1,45 @@
 const length_property = {
-    properties: [{
-        name: "length",
-        type: "number",
-        scope: "public",
-    }]
+    properties: [
+        {
+            name: "length",
+            type: "number",
+            scope: "public",
+        },
+    ],
 };
 const list_interface = {
-    methods: [{
-        name: "prepend",
-        args: "item: T",
-        return: "void",
-    }, {
-        name: "insertAt",
-        args: "item: T, idx: number",
-        return: "void",
-    }, {
-        name: "append",
-        args: "item: T",
-        return: "void",
-    }, {
-        name: "remove",
-        args: "item: T",
-        return: "T | undefined",
-    }, {
-        name: "get",
-        args: "idx: number",
-        return: "T | undefined",
-    }, {
-        name: "removeAt",
-        args: "idx: number",
-        return: "T | undefined",
-    }],
+    methods: [
+        {
+            name: "prepend",
+            args: "item: T",
+            return: "void",
+        },
+        {
+            name: "insertAt",
+            args: "item: T, idx: number",
+            return: "void",
+        },
+        {
+            name: "append",
+            args: "item: T",
+            return: "void",
+        },
+        {
+            name: "remove",
+            args: "item: T",
+            return: "T | undefined",
+        },
+        {
+            name: "get",
+            args: "idx: number",
+            return: "T | undefined",
+        },
+        {
+            name: "removeAt",
+            args: "idx: number",
+            return: "T | undefined",
+        },
+    ],
     ...length_property,
 };
 
@@ -38,80 +47,101 @@ module.exports = {
     LRU: {
         generic: "<K, V>",
         type: "class",
-        methods: [{
-            name: "update",
-            args: "key: K, value: V",
-            return: "void",
-        }, {
-            name: "get",
-            args: "key: K",
-            return: "V | undefined",
-        }],
-        properties: [{
-            name: "length",
-            type: "number",
-            scope: "private",
-        }]
+        methods: [
+            {
+                name: "update",
+                args: "key: K, value: V",
+                return: "void",
+            },
+            {
+                name: "get",
+                args: "key: K",
+                return: "V | undefined",
+            },
+        ],
+        properties: [
+            {
+                name: "length",
+                type: "number",
+                scope: "private",
+            },
+        ],
     },
     MinHeap: {
         type: "class",
-        methods: [{
-            name: "insert",
-            args: "value: number",
-            return: "void",
-        }, {
-            name: "delete",
-            args: "",
-            return: "number",
-        }],
-        properties: [{
-            name: "length",
-            type: "number",
-            scope: "public",
-        }]
+        methods: [
+            {
+                name: "insert",
+                args: "value: number",
+                return: "void",
+            },
+            {
+                name: "delete",
+                args: "",
+                return: "number",
+            },
+        ],
+        properties: [
+            {
+                name: "length",
+                type: "number",
+                scope: "public",
+            },
+        ],
     },
 
     Map: {
         generic: "<T extends (string | number), V>",
         type: "class",
-        methods: [{
-            name: "get",
-            args: "key: T",
-            return: "V | undefined",
-        }, {
-            name: "set",
-            args: "key: T, value: V",
-            return: "void",
-        }, {
-            name: "delete",
-            args: "key: T",
-            return: "V | undefined",
-        }, {
-            name: "size",
-            return: "number",
-        }],
+        methods: [
+            {
+                name: "get",
+                args: "key: T",
+                return: "V | undefined",
+            },
+            {
+                name: "set",
+                args: "key: T, value: V",
+                return: "void",
+            },
+            {
+                name: "delete",
+                args: "key: T",
+                return: "V | undefined",
+            },
+            {
+                name: "size",
+                return: "number",
+            },
+        ],
     },
 
     RingBuffer: {
         generic: "<T>",
         type: "class",
-        methods: [{
-            name: "push",
-            args: "item: T",
-            return: "void",
-        }, {
-            name: "get",
-            args: "idx: number",
-            return: "T | undefined",
-        }, {
-            name: "pop",
-            return: "T | undefined",
-        }],
-        properties: [{
-            name: "length",
-            type: "number",
-            scope: "public",
-        }]
+        methods: [
+            {
+                name: "push",
+                args: "item: T",
+                return: "void",
+            },
+            {
+                name: "get",
+                args: "idx: number",
+                return: "T | undefined",
+            },
+            {
+                name: "pop",
+                return: "T | undefined",
+            },
+        ],
+        properties: [
+            {
+                name: "length",
+                type: "number",
+                scope: "public",
+            },
+        ],
     },
 
     ArrayList: {
@@ -133,89 +163,101 @@ module.exports = {
         generic: "<T>",
         type: "class",
         ...length_property,
-        methods: [{
-            name: "enqueue",
-            args: "item: T",
-            return: "void",
-        }, {
-            name: "deque",
-            args: "",
-            return: "T | undefined",
-        }, {
-            name: "peek",
-            args: "",
-            return: "T | undefined",
-        }]
+        methods: [
+            {
+                name: "enqueue",
+                args: "item: T",
+                return: "void",
+            },
+            {
+                name: "deque",
+                args: "",
+                return: "T | undefined",
+            },
+            {
+                name: "peek",
+                args: "",
+                return: "T | undefined",
+            },
+        ],
     },
     Stack: {
         generic: "<T>",
         type: "class",
         ...length_property,
-        methods: [{
-            name: "push",
-            args: "item: T",
-            return: "void",
-        }, {
-            name: "pop",
-            args: "",
-            return: "T | undefined",
-        }, {
-            name: "peek",
-            args: "",
-            return: "T | undefined",
-        }]
+        methods: [
+            {
+                name: "push",
+                args: "item: T",
+                return: "void",
+            },
+            {
+                name: "pop",
+                args: "",
+                return: "T | undefined",
+            },
+            {
+                name: "peek",
+                args: "",
+                return: "T | undefined",
+            },
+        ],
     },
 
     Trie: {
         type: "class",
-        methods: [{
-            name: "insert",
-            args: "item: string",
-            return: "void",
-        }, {
-            name: "delete",
-            args: "item: string",
-            return: "void",
-        }, {
-            name: "find",
-            args: "partial: string",
-            return: "string[]",
-        }]
+        methods: [
+            {
+                name: "insert",
+                args: "item: string",
+                return: "void",
+            },
+            {
+                name: "delete",
+                args: "item: string",
+                return: "void",
+            },
+            {
+                name: "find",
+                args: "partial: string",
+                return: "string[]",
+            },
+        ],
     },
 
     BubbleSort: {
         type: "fn",
         fn: "bubble_sort",
         args: "arr: number[]",
-        "return": "void",
+        return: "void",
     },
 
     InsertionSort: {
         type: "fn",
         fn: "insertion_sort",
         args: "arr: number[]",
-        "return": "void",
+        return: "void",
     },
 
     MergeSort: {
         type: "fn",
         fn: "merge_sort",
         args: "arr: number[]",
-        "return": "void",
+        return: "void",
     },
 
     QuickSort: {
         type: "fn",
         fn: "quick_sort",
         args: "arr: number[]",
-        "return": "void",
+        return: "void",
     },
 
     DijkstraList: {
         type: "fn",
         fn: "dijkstra_list",
         args: "source: number, sink: number, arr: WeightedAdjacencyList",
-        "return": "number[]",
+        return: "number[]",
     },
 
     PrimsList: {
@@ -316,4 +358,3 @@ module.exports = {
         return: "number[] | null",
     },
 };
-

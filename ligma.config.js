@@ -75,12 +75,7 @@ module.exports = {
         "LRU",
         "RingBuffer",
     ],
-    sorting: [
-        "BubbleSort",
-        "QuickSort",
-        "InsertionSort",
-        "MergeSort",
-    ],
+    sorting: ["BubbleSort", "QuickSort", "InsertionSort", "MergeSort"],
     trees: [
         "BTPreOrder",
         "BTInOrder",
@@ -98,4 +93,4 @@ module.exports = {
         "DijkstraList",
         "PrimsList",
     ],
-}
+};
