@@ -14,10 +14,10 @@
         "typescript": "^4.7.4"
     },
     "scripts": {
-        "test": "jest BubbleSort",
+        "test": "jest Queue Stack ArrayList Trie",
         "clear": "./scripts/clear",
         "prettier": "prettier --write ./src",
         "generate": "./scripts/generate",
-        "day": "echo src/day30"
+        "day": "echo src/day32"
     }
 }
