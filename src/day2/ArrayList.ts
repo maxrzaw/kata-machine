@@ -31,7 +31,7 @@ export default class ArrayList<T> {
 
         let i = this.length;
         for (; i > idx; --i) {
-            this.array[i] = this.array[i-1];
+            this.array[i] = this.array[i - 1];
         }
         this.length++;
     }
@@ -42,7 +42,7 @@ export default class ArrayList<T> {
         this.length--;
         let i = idx;
         for (; i < this.length; ++i) {
-            this.array[i] = this.array[i+1];
+            this.array[i] = this.array[i + 1];
         }
     }
 

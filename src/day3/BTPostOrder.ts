@@ -9,7 +9,9 @@ function post_order(head: BinaryNode<number>, order: number[]): void {
 
     order.push(head.value);
 }
-export default function post_order_traversal(head: BinaryNode<number>): number[] {
+export default function post_order_traversal(
+    head: BinaryNode<number>,
+): number[] {
     let order: number[] = [];
     post_order(head, order);
     return order;

@@ -1,7 +1,6 @@
-import binary_fn from "@code/BinarySearchList"
+import binary_fn from "@code/BinarySearchList";
 
-test("binary search array", function() {
-
+test("binary search array", function () {
     const foo = [1, 3, 4, 69, 71, 81, 90, 99, 420, 1337, 69420];
     expect(binary_fn(foo, 69)).toEqual(true);
     expect(binary_fn(foo, 1336)).toEqual(false);
@@ -10,4 +9,3 @@ test("binary search array", function() {
     expect(binary_fn(foo, 1)).toEqual(true);
     expect(binary_fn(foo, 0)).toEqual(false);
 });
-

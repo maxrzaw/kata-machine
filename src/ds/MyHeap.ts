@@ -52,11 +52,17 @@ export default class MyHeap<T> {
         const rightValue = this.data[right];
         const value = this.data[idx];
 
-        if (this.compare(rightValue, leftValue) && this.compare(rightValue, value)) {
+        if (
+            this.compare(rightValue, leftValue) &&
+            this.compare(rightValue, value)
+        ) {
             this.data[idx] = rightValue;
             this.data[right] = value;
             this.heapifyDown(right);
-        } else if (this.compare(leftValue, rightValue) && this.compare(leftValue, value)) {
+        } else if (
+            this.compare(leftValue, rightValue) &&
+            this.compare(leftValue, value)
+        ) {
             this.data[idx] = leftValue;
             this.data[left] = value;
             this.heapifyDown(left);

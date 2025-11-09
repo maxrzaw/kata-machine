@@ -2,7 +2,11 @@
 // need to return an array
 // will do it iteratively since it is BFS and not DFS
 import Queue from "../ds/Queue";
-export default function bfs(graph: WeightedAdjacencyList, source: number, needle: number): number[] | null {
+export default function bfs(
+    graph: WeightedAdjacencyList,
+    source: number,
+    needle: number,
+): number[] | null {
     const seen: boolean[] = Array(graph.length).fill(false);
     const prev: number[] = Array(graph.length).fill(-1);
     const next: Queue<number> = new Queue<number>();
@@ -30,7 +34,6 @@ export default function bfs(graph: WeightedAdjacencyList, source: number, needle
             next.enqueue(child);
         }
     }
-
 
     // Finish
     if (!seen[needle]) {

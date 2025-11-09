@@ -1,7 +1,7 @@
 export default class ArrayList<T> {
     public length: number;
     private data: T[];
-    
+
     private grow(): void {
         if (this.length === this.data.length) {
             const prev = this.data;
@@ -25,7 +25,7 @@ export default class ArrayList<T> {
         this.grow();
 
         for (let i = this.length - 1; i >= idx; --i) {
-            this.data[i+1] = this.data[i];
+            this.data[i + 1] = this.data[i];
         }
 
         this.length++;
@@ -71,7 +71,7 @@ export default class ArrayList<T> {
         this.length--;
 
         for (let i = idx; i < this.length; ++i) {
-            this.data[i] = this.data[i+1];
+            this.data[i] = this.data[i + 1];
         }
 
         return out;

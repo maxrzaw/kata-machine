@@ -2,13 +2,24 @@ const directions: number[][] = [
     [-1, 0],
     [0, 1],
     [0, -1],
-    [1, 0]
+    [1, 0],
 ];
 
-function solve_recursive(maze: string[], wall: string, start: Point, end: Point, path: Point[], seen: boolean[][]): boolean {
+function solve_recursive(
+    maze: string[],
+    wall: string,
+    start: Point,
+    end: Point,
+    path: Point[],
+    seen: boolean[][],
+): boolean {
     // Base Case: Off Map
-    if (start.x < 0 || start.x >= maze[0].length ||
-        start.y < 0 || start.y >= maze.length) {
+    if (
+        start.x < 0 ||
+        start.x >= maze[0].length ||
+        start.y < 0 ||
+        start.y >= maze.length
+    ) {
         return false;
     }
 
@@ -36,7 +47,16 @@ function solve_recursive(maze: string[], wall: string, start: Point, end: Point,
     for (let i = 0; i < directions.length; ++i) {
         const [x, y] = directions[i];
 
-        if (solve_recursive(maze, wall, {x: start.x + x, y: start.y + y}, end, path, seen)) {
+        if (
+            solve_recursive(
+                maze,
+                wall,
+                { x: start.x + x, y: start.y + y },
+                end,
+                path,
+                seen,
+            )
+        ) {
             return true;
         }
     }
@@ -46,7 +66,12 @@ function solve_recursive(maze: string[], wall: string, start: Point, end: Point,
     return false;
 }
 
-export default function solve(maze: string[], wall: string, start: Point, end: Point): Point[] {
+export default function solve(
+    maze: string[],
+    wall: string,
+    start: Point,
+    end: Point,
+): Point[] {
     const path: Point[] = [];
     const seen: boolean[][] = [];
     for (let i = 0; i < maze.length; ++i) {

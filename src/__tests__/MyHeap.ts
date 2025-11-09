@@ -51,5 +51,3 @@ test("my heap", function () {
     expect(maxHeap.delete()).toEqual(1);
     expect(maxHeap.length).toEqual(0);
 });
-
-

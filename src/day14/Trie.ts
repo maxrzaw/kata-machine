@@ -1,15 +1,15 @@
 type TrieNode = {
-    children: TrieNode[],
-    isValue: boolean,
-    value?: string,
-}
+    children: TrieNode[];
+    isValue: boolean;
+    value?: string;
+};
 
 function createNode(): TrieNode {
-    return {children: [], isValue: false, value: undefined};
+    return { children: [], isValue: false, value: undefined };
 }
 
 function getIdx(char: string): number {
-    return char.charCodeAt(0) - 'a'.charCodeAt(0);
+    return char.charCodeAt(0) - "a".charCodeAt(0);
 }
 
 export default class Trie {

@@ -1,7 +1,7 @@
 type ListNode<T> = {
-    value: T,
-    next?: ListNode<T>,
-}
+    value: T;
+    next?: ListNode<T>;
+};
 
 export default class SinglyLinkedList<T> {
     public length: number;
@@ -14,9 +14,9 @@ export default class SinglyLinkedList<T> {
 
     prepend(item: T): void {
         if (this.head === undefined) {
-            this.head = {value: item, next: undefined};
+            this.head = { value: item, next: undefined };
         } else {
-            const node: ListNode<T> = {value: item, next: this.head};
+            const node: ListNode<T> = { value: item, next: this.head };
             this.head = node;
         }
         this.length++;
@@ -44,14 +44,14 @@ export default class SinglyLinkedList<T> {
             return;
         }
 
-        const node = {value: item, next: curr.next};
+        const node = { value: item, next: curr.next };
         curr.next = node;
         this.length++;
     }
 
     append(item: T): void {
         this.length++;
-        const node = {value: item, next: undefined};
+        const node = { value: item, next: undefined };
 
         if (this.head === undefined) {
             this.head = node;

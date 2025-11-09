@@ -1,6 +1,10 @@
 import Queue from "../ds/Queue";
 
-export default function bfs(graph: WeightedAdjacencyMatrix, source: number, needle: number): number[] | null {
+export default function bfs(
+    graph: WeightedAdjacencyMatrix,
+    source: number,
+    needle: number,
+): number[] | null {
     let queue: Queue<number> = new Queue<number>();
     let seen: boolean[] = [];
     seen.length = graph.length;

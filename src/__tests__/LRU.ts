@@ -30,4 +30,3 @@ test("LRU", function () {
     // ball should still be there
     expect(lru.get("ball")).toEqual(69420);
 });
-

@@ -1,7 +1,7 @@
 import Queue from "../ds/Queue";
 
 function hasUnvisited(seen: boolean[], dists: number[]): boolean {
-    return  seen.some((s, i) => !s && dists[i] < Infinity);
+    return seen.some((s, i) => !s && dists[i] < Infinity);
 }
 
 function getLowestUnvisited(seen: boolean[], dists: number[]): number {
@@ -22,7 +22,11 @@ function getLowestUnvisited(seen: boolean[], dists: number[]): number {
     return idx;
 }
 
-export default function dijkstra_list(source: number, sink: number, graph: WeightedAdjacencyList): number[] {
+export default function dijkstra_list(
+    source: number,
+    sink: number,
+    graph: WeightedAdjacencyList,
+): number[] {
     let queue: Queue<number> = new Queue<number>();
     let prev = Array(graph.length).fill(-1);
     let seen = Array(graph.length).fill(false);

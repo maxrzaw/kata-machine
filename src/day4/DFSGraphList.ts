@@ -1,4 +1,10 @@
-function dfsRecursive(graph: WeightedAdjacencyList, source: number, needle: number, path: number[], seen: boolean[]): boolean {
+function dfsRecursive(
+    graph: WeightedAdjacencyList,
+    source: number,
+    needle: number,
+    path: number[],
+    seen: boolean[],
+): boolean {
     // Pre
     path.push(source);
 
@@ -25,7 +31,11 @@ function dfsRecursive(graph: WeightedAdjacencyList, source: number, needle: numb
     return false;
 }
 
-export default function dfs(graph: WeightedAdjacencyList, source: number, needle: number): number[] | null {
+export default function dfs(
+    graph: WeightedAdjacencyList,
+    source: number,
+    needle: number,
+): number[] | null {
     let seen = Array(graph.length).fill(false);
     seen[source] = true;
 

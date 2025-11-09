@@ -1,10 +1,10 @@
 const p1 = 821;
 const p2 = 823;
 
-export default class Map<T extends (string | number), V> {
+export default class Map<T extends string | number, V> {
     private length: number;
     private data: (undefined | [T, V])[];
-    
+
     constructor() {
         this.data = new Array(5000);
         this.length = 0;
@@ -63,7 +63,7 @@ export default class Map<T extends (string | number), V> {
         this.length = 0;
 
         for (let i = 0; i < data.length; ++i) {
-            const key = data[i]; 
+            const key = data[i];
 
             if (key) {
                 this.set(...key);
@@ -71,12 +71,14 @@ export default class Map<T extends (string | number), V> {
         }
     }
 
-
     private hash(key: T): number {
         if (typeof key === "number") {
             return (key * p1 * p2) % this.data.length;
         } else {
-            return (p1 * key.charCodeAt(0) + p2 * key.charCodeAt(key.length - 1)) % this.data.length;
+            return (
+                (p1 * key.charCodeAt(0) + p2 * key.charCodeAt(key.length - 1)) %
+                this.data.length
+            );
         }
     }
 }

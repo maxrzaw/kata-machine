@@ -48,4 +48,3 @@ type Node<T> = {
     val: T;
     next?: Node<T>;
 };
-

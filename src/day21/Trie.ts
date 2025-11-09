@@ -4,7 +4,7 @@
 type TrieNode = {
     children: Map<string, TrieNode>;
     isWord: boolean;
-}
+};
 
 function createTrieNode(): TrieNode {
     return {
@@ -16,7 +16,11 @@ function createTrieNode(): TrieNode {
 export default class Trie {
     private root: TrieNode;
 
-    private getCompletions(prefix: string, root: TrieNode, result: string[]): void {
+    private getCompletions(
+        prefix: string,
+        root: TrieNode,
+        result: string[],
+    ): void {
         if (root.isWord) {
             result.push(prefix);
         }
@@ -25,7 +29,7 @@ export default class Trie {
             this.getCompletions(prefix + key, value, result);
         });
     }
-    
+
     constructor() {
         this.root = createTrieNode();
     }
@@ -69,7 +73,7 @@ export default class Trie {
             }
             curr = next;
         }
-        
+
         const result: string[] = [];
         this.getCompletions(partial, curr, result);
         return result;

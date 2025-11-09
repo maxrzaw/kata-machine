@@ -1,6 +1,10 @@
 import Queue from "../ds/Queue";
 
-export default function bfs(graph: WeightedAdjacencyList, source: number, needle: number): number[] | null {
+export default function bfs(
+    graph: WeightedAdjacencyList,
+    source: number,
+    needle: number,
+): number[] | null {
     const seen = Array(graph.length).fill(false);
     const prev = Array(graph.length).fill(-1);
     const next = new Queue<number>();

@@ -7,4 +7,3 @@ test("bubble-sort", function () {
     bubble_sort(arr);
     expect(arr).toEqual([3, 4, 7, 9, 42, 69, 420]);
 });
-

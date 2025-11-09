@@ -7,7 +7,6 @@ function walk(head: BinaryNode<number> | null, needle: number): boolean {
         return true;
     }
 
-
     return walk(head.left, needle) || walk(head.right, needle);
 }
 

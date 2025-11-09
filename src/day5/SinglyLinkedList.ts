@@ -1,6 +1,6 @@
 type Node<T> = {
-    value: T,
-    next?: Node<T>,
+    value: T;
+    next?: Node<T>;
 };
 
 export default class SinglyLinkedList<T> {
@@ -37,7 +37,7 @@ export default class SinglyLinkedList<T> {
         return undefined;
     }
 
-    private removeNextNode(prev: Node<T> | undefined): T | undefined{
+    private removeNextNode(prev: Node<T> | undefined): T | undefined {
         this.length--;
         if (prev === undefined) {
             // we are removing the head
@@ -58,7 +58,7 @@ export default class SinglyLinkedList<T> {
 
     insertAt(item: T, idx: number): void {
         if (idx === 0) {
-            const node = {value: item, next: this.head} as Node<T>;
+            const node = { value: item, next: this.head } as Node<T>;
             this.head = node;
             this.length++;
             return;
@@ -70,7 +70,7 @@ export default class SinglyLinkedList<T> {
             throw new Error("bad boy!");
         }
 
-        const node = {value: item, next: prev?.next} as Node<T>;
+        const node = { value: item, next: prev?.next } as Node<T>;
         prev.next = node;
         this.length++;
     }

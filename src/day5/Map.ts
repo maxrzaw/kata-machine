@@ -1,7 +1,7 @@
 const p1 = 821;
 const p2 = 823;
 
-export default class Map<K extends (string | number), V> {
+export default class Map<K extends string | number, V> {
     private data: (undefined | [K, V])[];
     private length: number;
 
@@ -73,7 +73,7 @@ export default class Map<K extends (string | number), V> {
 
         for (let i = 0; i < data.length; ++i) {
             // is this right? I thought we had to get the key?
-            const key = data[i]; 
+            const key = data[i];
 
             if (key) {
                 this.set(...key);
@@ -85,6 +85,9 @@ export default class Map<K extends (string | number), V> {
         if (typeof key === "number") {
             return (key * p1 * p2) % this.data.length;
         }
-        return (key.charCodeAt(0) * p1 + key.charCodeAt(key.length - 1) * p1) % this.data.length;
+        return (
+            (key.charCodeAt(0) * p1 + key.charCodeAt(key.length - 1) * p1) %
+            this.data.length
+        );
     }
 }

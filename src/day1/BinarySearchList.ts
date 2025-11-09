@@ -10,11 +10,10 @@ export default function bs_list(haystack: number[], needle: number): boolean {
         }
         if (needle > haystack[middle]) {
             left = middle + 1;
-        }
-        else {
+        } else {
             right = middle;
         }
     } while (left < right);
-    
+
     return false;
 }

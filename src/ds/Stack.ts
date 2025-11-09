@@ -1,19 +1,17 @@
 type Node<T> = {
-    val: T,
-    prev?: Node<T>,
-}
+    val: T;
+    prev?: Node<T>;
+};
 export default class Stack<T> {
     public length: number;
     private top?: Node<T>;
-
-
 
     constructor() {
         this.length = 0;
     }
 
     push(item: T): void {
-        const node = {val: item} as Node<T>;
+        const node = { val: item } as Node<T>;
 
         this.length++;
         if (!this.top) {

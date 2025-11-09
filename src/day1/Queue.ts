@@ -1,30 +1,28 @@
 type Node<T> = {
-    val: T,
-    next?: Node<T>,
-}
+    val: T;
+    next?: Node<T>;
+};
 
 export default class Queue<T> {
     public length: number;
     private front?: Node<T>;
     private back?: Node<T>;
 
-
-
     constructor() {
         this.length = 0;
-        this.front  = undefined;
+        this.front = undefined;
         this.back = undefined;
     }
 
     enqueue(item: T): void {
-        const elt = {val: item} as Node<T>;
+        const elt = { val: item } as Node<T>;
         this.length++;
 
         if (!this.back) {
             this.back = this.front = elt;
             return;
         }
-        
+
         this.back.next = elt;
         this.back = elt;
     }

@@ -26,5 +26,3 @@ test("min heap", function () {
     expect(heap.delete()).toEqual(420);
     expect(heap.length).toEqual(0);
 });
-
-

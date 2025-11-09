@@ -3,6 +3,9 @@ export default function dfs(head: BinaryNode<number>, needle: number): boolean {
         return true;
     }
 
-    return ((head.left && dfs(head.left, needle)) ||
-            (head.right && dfs(head.right, needle)) || false);
+    return (
+        (head.left && dfs(head.left, needle)) ||
+        (head.right && dfs(head.right, needle)) ||
+        false
+    );
 }

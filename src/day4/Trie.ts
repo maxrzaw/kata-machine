@@ -1,8 +1,8 @@
 type TrieNode = {
-    children: TrieNode[],
-    isValue: boolean
-    value?: string
-}
+    children: TrieNode[];
+    isValue: boolean;
+    value?: string;
+};
 
 // Creates a new TrieNode with defaults
 function createTrieNode() {
@@ -13,7 +13,7 @@ function createTrieNode() {
 }
 
 // Char code for 'a'.
-const start = 'a'.charCodeAt(0);
+const start = "a".charCodeAt(0);
 
 // Returns the distance from 'a' which can be used to index into an array.
 function getIdx(item: string, idx: number): number {
@@ -65,7 +65,10 @@ export default class Trie {
     }
 
     // Finds all the possible words to complete node.
-    private findRecursively(node: TrieNode | undefined, out: string[]): string[] {
+    private findRecursively(
+        node: TrieNode | undefined,
+        out: string[],
+    ): string[] {
         if (!node) {
             return out;
         }
@@ -77,7 +80,7 @@ export default class Trie {
         for (let i = 0; i < node.children.length; ++i) {
             this.findRecursively(node.children[i], out);
         }
-        
+
         return out;
     }
 }

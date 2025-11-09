@@ -37,4 +37,3 @@ type Node<T> = {
     val: T;
     prev?: Node<T>;
 };
-

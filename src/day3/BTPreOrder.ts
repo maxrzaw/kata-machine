@@ -9,7 +9,9 @@ function pre_order(head: BinaryNode<number>, order: number[]): void {
         pre_order(head.right, order);
     }
 }
-export default function pre_order_traversal(head: BinaryNode<number>): number[] {
+export default function pre_order_traversal(
+    head: BinaryNode<number>,
+): number[] {
     let order: number[] = [];
     pre_order(head, order);
     return order;

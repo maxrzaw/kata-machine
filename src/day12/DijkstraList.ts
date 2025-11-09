@@ -1,5 +1,5 @@
 function areUnvisited(seen: boolean[]): boolean {
-    return seen.some(node => node === false);
+    return seen.some((node) => node === false);
 }
 
 function getShortestUnvisited(seen: boolean[], dists: number[]): number {
@@ -15,7 +15,11 @@ function getShortestUnvisited(seen: boolean[], dists: number[]): number {
     return min_idx;
 }
 
-export default function dijkstra_list(source: number, sink: number, arr: WeightedAdjacencyList): number[] {
+export default function dijkstra_list(
+    source: number,
+    sink: number,
+    arr: WeightedAdjacencyList,
+): number[] {
     const seen: boolean[] = Array(arr.length).fill(false);
     const prev: number[] = Array(arr.length).fill(-1);
     const dists: number[] = Array(arr.length).fill(Infinity);

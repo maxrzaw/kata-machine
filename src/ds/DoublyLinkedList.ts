@@ -1,8 +1,8 @@
 // Node struct
 type Node<T> = {
-    val: T,
-    prev?: Node<T>,
-    next?: Node<T>,
+    val: T;
+    prev?: Node<T>;
+    next?: Node<T>;
 };
 
 export default class DoublyLinkedList<T> {
@@ -19,7 +19,7 @@ export default class DoublyLinkedList<T> {
     // helper function to search for item T
     private getItemNode(item: T): Node<T> | undefined {
         let n = this.front;
-        while(n) {
+        while (n) {
             if (n.val == item) {
                 break;
             }
@@ -46,11 +46,11 @@ export default class DoublyLinkedList<T> {
     // helper to insert
     private insertAfterNode(item: T, n?: Node<T>): void {
         // create new node elt
-        let elt = {val: item} as Node<T>;
+        let elt = { val: item } as Node<T>;
 
         if (this.length === 0) {
             this.front = this.back = elt;
-            this.length ++;
+            this.length++;
             return;
         }
 
@@ -111,7 +111,7 @@ export default class DoublyLinkedList<T> {
         let val = n.val;
 
         // delete curr
-        n = undefined
+        n = undefined;
 
         this.length--;
         return val;

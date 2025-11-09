@@ -1,11 +1,11 @@
 type Node<T> = {
-    value: T,
-    next?: Node<T>,
-    prev?: Node<T>,
-}
+    value: T;
+    next?: Node<T>;
+    prev?: Node<T>;
+};
 
 function createNode<V>(value: V): Node<V> {
-    return {value};
+    return { value };
 }
 
 export default class LRU<K, V> {
@@ -21,7 +21,6 @@ export default class LRU<K, V> {
         this.head = this.tail = undefined;
         this.lookup = new Map<K, Node<V>>();
         this.reverseLookup = new Map<Node<V>, K>();
-
     }
 
     update(key: K, value: V): void {
@@ -71,7 +70,7 @@ export default class LRU<K, V> {
         if (this.head === node) {
             this.head = this.head.next;
         }
-        
+
         if (this.tail === node) {
             this.tail = node.prev;
         }
@@ -96,7 +95,7 @@ export default class LRU<K, V> {
             return;
         }
         const tail = this.tail as Node<V>;
-        this.detatch(this.tail as Node<V>)
+        this.detatch(this.tail as Node<V>);
 
         console.log(`Deleting ${tail.value} from the cache.`);
         const key = this.reverseLookup.get(tail) as K;

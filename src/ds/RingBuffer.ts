@@ -3,7 +3,6 @@ export default class RingBuffer<T> {
     private data: Array<T>;
     private tail: number;
 
-    
     constructor(private capacity: number = 10) {
         this.data = new Array<T>();
         this.data.length = capacity;
@@ -35,7 +34,7 @@ export default class RingBuffer<T> {
         this.length--;
         const val = this.data[this.tail];
         this.tail = (this.tail + 1) % this.capacity;
-        
+
         return val;
     }
 

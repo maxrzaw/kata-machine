@@ -1,4 +1,7 @@
-export default function compare(a: BinaryNode<number> | null, b: BinaryNode<number> | null): boolean {
+export default function compare(
+    a: BinaryNode<number> | null,
+    b: BinaryNode<number> | null,
+): boolean {
     // Compare a and b by value
     if (a?.value !== b?.value) {
         return false;

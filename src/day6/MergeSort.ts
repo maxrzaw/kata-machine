@@ -33,8 +33,7 @@ function merge_sort_recursive(arr: number[]): void {
         } else if (lv < rv) {
             arr[i] = lv as number;
             l++;
-        }
-        else {
+        } else {
             arr[i] = rv as number;
             r++;
         }

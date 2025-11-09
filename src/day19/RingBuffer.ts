@@ -2,7 +2,7 @@ export default class RingBuffer<T> {
     public length: number;
     private data: T[];
     private head: number;
-    
+
     constructor(capacity: number = 5) {
         this.data = Array(capacity);
         this.head = 0;

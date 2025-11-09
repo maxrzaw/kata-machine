@@ -3,7 +3,7 @@ import DoublyLinkedList from "../ds/DoublyLinkedList";
 export default class Queue<T> {
     public length: number;
     private data: DoublyLinkedList<T>;
-    
+
     constructor() {
         this.data = new DoublyLinkedList<T>();
         this.length = 0;
