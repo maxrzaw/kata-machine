@@ -17,7 +17,7 @@
         "test": "jest Queue Stack ArrayList Trie",
         "clear": "./scripts/clear",
         "prettier": "prettier --write ./src",
-        "generate": "./scripts/generate && npx prettier --write ."
+        "generate": "./scripts/generate && npx prettier --write .",
         "day": "echo src/day32"
     }
 }
