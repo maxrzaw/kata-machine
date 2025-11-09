@@ -7,8 +7,8 @@
         "resolveJsonModule": true,
         "noImplicitReturns": true,
         "esModuleInterop": true,
-        "target": "es6",
-        "module": "commonjs",
+        "target": "es2022",
+        "module": "esnext",
         "baseUrl": "src",
         "paths": {
             "@code/*": ["day32/*"]
@@ -17,4 +17,3 @@
     "include": ["./src/**/*"],
     "exclude": ["node_modules"]
 }
-
